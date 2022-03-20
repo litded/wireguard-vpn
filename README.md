@@ -10,7 +10,7 @@ apt install git iptables wireguard  wireguard-tools qrencode
 
 # Конфигурация
 
-git clone git@github.com:litded/wireguard-vpn.git
+git clone https://github.com/litded/wireguard-vpn.git
 
 mv ./wireguard-vpn /etc/wireguard
 
