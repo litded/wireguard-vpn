@@ -2,14 +2,14 @@
 
 
 # Установка
-
+```
 apt update
 
 apt install git iptables wireguard  wireguard-tools qrencode
-
+```
 
 # Конфигурация
-
+```
 git clone https://github.com/litded/wireguard-vpn.git
 
 mv ./wireguard-vpn /etc/wireguard
@@ -33,13 +33,18 @@ systemctl enable wg-quick@wg0
 systemctl start wg-quick@wg0
 
 systemctl status wg-quick@wg0
-
+```
 
 # Создать конфиг пользователя
-
+```
 bash /etc/wireguard/wgpeer.sh vpn1
-
+```
 
 # Вывести QR-код созданного пользователя
-
+```
 qrencode -t ansiutf8 < /etc/wireguard/clients/vpn1/wg0.conf
+```
+
+# Как подключить?
+## Android
+Установить WireGuard из PlayMarket и отсканировать QR-код созданного пользователя
