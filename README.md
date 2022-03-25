@@ -46,5 +46,4 @@ qrencode -t ansiutf8 < /etc/wireguard/clients/vpn1/wg0.conf
 ```
 
 # Как подключить?
-## Android
-Установить WireGuard из PlayMarket и отсканировать QR-код созданного пользователя
+Выбрать [версию клиента](https://www.wireguard.com/install/) и найти гайды по установке
