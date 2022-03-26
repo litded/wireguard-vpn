@@ -16,7 +16,7 @@ mv ./wireguard-vpn /etc/wireguard
 
 cd /etc/wireguard
 
-wg genkey | sudo tee /etc/wireguard/privatekey | wg pubkey | sudo tee /etc/wireguard/publickey
+wg genkey | tee /etc/wireguard/privatekey | wg pubkey | tee /etc/wireguard/publickey
 
 cat wg0.example.conf | sed -e 's/:PRIVATEKEY:/'"$(cat /etc/wireguard/privatekey)"'/' > ./wg0.conf
 
