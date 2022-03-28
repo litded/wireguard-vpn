@@ -12,13 +12,15 @@ apt install git iptables wireguard  wireguard-tools qrencode
 ```
 git clone https://github.com/litded/wireguard-vpn.git
 
-mv ./wireguard-vpn /etc/wireguard
+mkdir -p /etc/wireguard
+
+mv ./wireguard-vpn/* /etc/wireguard/
 
 cd /etc/wireguard
 
 wg genkey | tee /etc/wireguard/privatekey | wg pubkey | tee /etc/wireguard/publickey
 
-cat wg0.example.conf | sed -e 's/:PRIVATEKEY:/'"$(cat /etc/wireguard/privatekey)"'/' > ./wg0.conf
+echo "PrivateKey = $(cat /etc/wireguard/privatekey)" >> ./wg0.conf
 
 chmod 600 /etc/wireguard/{privatekey,wg0.conf}
 
@@ -48,3 +50,5 @@ qrencode -t ansiutf8 < /etc/wireguard/clients/vpn1/wg0.conf
 # Как подключить?
 ## Android
 Установить WireGuard из PlayMarket и отсканировать QR-код созданного пользователя
+## Windows MacOS
+Установите официальный клиент и используйте файл конфигурации /etc/wireguard/clients/?/wg0.conf
