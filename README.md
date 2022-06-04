@@ -41,6 +41,8 @@ reboot
 
 # Создать конфиг пользователя
 ```
+cd /etc/wireguard
+
 bash /etc/wireguard/wgpeer.sh vpn1
 ```
 
