@@ -27,6 +27,8 @@ chmod 600 /etc/wireguard/{privatekey,wg0.conf}
 
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.d/99-custom.conf
 
+echo "net.ipv6.conf.all.forwarding=1" >> /etc/sysctl.d/99-custom.conf
+
 sysctl -p /etc/sysctl.d/99-custom.conf
 
 
